@@ -2,12 +2,17 @@ package com.cauzy.tasklist.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.cauzy.tasklist.entities.Task;
 import com.cauzy.tasklist.repository.TaskRepository;
 import com.cauzy.tasklist.services.exceptions.ResourceNotFoundException;
 
+@Service
 public class TaskService {
 	
+	@Autowired
 	private TaskRepository taskRepository;
 	
 	public Task insert(Task task) {
