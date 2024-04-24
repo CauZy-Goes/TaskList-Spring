@@ -1,10 +1,13 @@
 package com.cauzy.tasklist.entities;
 
-import jakarta.persistence.*;
-
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Objects;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_task")
@@ -15,15 +18,13 @@ public class Task implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-    private Instant deadLine;
 
     public Task() {
     }
 
-    public Task(Long id, String description, Instant deadLine) {
+    public Task(Long id, String description) {
         this.id = id;
         this.description = description;
-        this.deadLine = deadLine;
     }
 
     public Long getId() {
@@ -40,14 +41,6 @@ public class Task implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Instant getDeadLine() {
-        return deadLine;
-    }
-
-    public void setDeadLine(Instant deadLine) {
-        this.deadLine = deadLine;
     }
 
     @Override

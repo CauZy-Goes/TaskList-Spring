@@ -19,7 +19,7 @@ import com.cauzy.tasklist.entities.Task;
 import com.cauzy.tasklist.services.TaskService;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/tasks")
 public class TaskResource {
 	
 	@Autowired

@@ -41,6 +41,5 @@ public class TaskService {
 
 	private void updateTasks(Task newTask, Task task) {
 		newTask.setDescription(task.getDescription());
-		newTask.setDeadLine(task.getDeadLine());
 	}
 }
